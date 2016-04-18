@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8" />
+<title>Inscription</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/mystyle.css"/>
+</head>
+<body ng-app="myApp" ng-controller="InscriptionConroller">
+<div class="col-md-6 col-sm-offset-6 spacer">
+<div class="panel panel-info">
+<div class="panel-heading">Inscription Etudiant <span ng-if="mode.value=='confirm'" class="valid">: Inscription de l'Etudiant avec Succés</span></div>
+<div class="panel-body">
+<div ng-if="mode.value=='form'">
+<form>
+<div class="form-group">
+<label class="control-label">Nom :</label>
+<input class="form-control" type="text" ng-model="etudiant.nom"/>
+<span ng-if="errors" class="errors">{{errors.nom}}</span>
+</div>
+
+<div class="form-group">
+<label class="control-label">Prénom :</label>
+<input class="form-control" type="text" ng-model="etudiant.prenom"/>
+<span ng-if="errors" class="errors">{{errors.prenom}}</span>
+</div>
+
+<div class="form-group">
+<label class="control-label">Date de Naissance :</label>
+<input class="form-control" type="date" ng-model="etudiant.dateNaissance"/>
+<span ng-if="errors" class="errors">{{errors.dateNaissance}}</span>
+</div>
+<div>
+<button class="btn btn-primary"  ng-click="ajouterEtudiant()">Save</button>
+<button class="btn btn-primary"  ng-click="annuler()">Annuler</button>
+</div>
+</form>
+</div>
+
+<div ng-if="mode.value=='confirm'">
+
+<div class="form-group">
+<label class="cotrol-label">ID Etudiant :</label>
+<label class="control-label">{{etudiant.idEtudiant}}</label>
+</div>
+<div class="form-group">
+<label class="control-label">Nom :</label>
+<label class="control-label">{{etudiant.nom}}</label>
+</div>
+<div class="form-group">
+<label class="control-label">Prénom :</label>
+<label class="control-label">{{etudiant.prenom}}</label>
+</div>
+	<div class="form-group">
+	<label class="control-label">Date de Naissance :</label>
+	<label class="control-label">{{etudiant.dateNaissance|date:"dd/MM/yyyy"}}</label>
+	</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/myApp.js"></script>
+
+</body>
+</html>

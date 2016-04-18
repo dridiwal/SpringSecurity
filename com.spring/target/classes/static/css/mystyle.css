@@ -1,0 +1,12 @@
+.spacer{
+	margin-top: 20px;
+}
+.errors{
+	color: red;
+}
+.valid{
+	color: green;
+}
+.clickable{
+	cursor: pointer;
+}

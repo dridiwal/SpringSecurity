@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8" />
+<title>List Etudiants</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/mystyle.css"/>
+</head>
+<body ng-app="myApp" ng-controller="listEtudiantsCOntroller">
+<div class="col-md-5 col-sm-5 spacer">
+<div class="panel panel-info">
+<div class="panel-heading">List des Etudiants </div>
+<div class="panel-body">
+	<table class="table table-striped">
+	<thead>
+	<tr>
+	<th>ID ETUDIANT</th><th>NOM</th><th>PRENOM</th><th>DATE DE NAISSANCE</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="e in pageEtudiants.content ">
+	<td>{{e.idEtudiant}}</td>
+	<td>{{e.nom}}</td>
+	<td>{{e.prenom}}</td>
+	<td>{{e.dateNaissance|date:"dd/MM/yyyy"}}</td>
+	</tr>
+	</tbody>
+	</table>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/myApp.js"></script>
+
+</body>
+</html>
